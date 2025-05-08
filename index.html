@@ -370,7 +370,7 @@ button:active {
       });
       summary += "－\n台幣總金額：" + total + " 元\n";
       navigator.clipboard.writeText(summary).then(function() {
-        alert("已複製全部報價文字！");
+        alert("已複製全部報價文字！\n可以直接貼上報價內容傳給官方Line哦！");
       }, function(err) {
         alert("複製失敗：" + err);
       });
