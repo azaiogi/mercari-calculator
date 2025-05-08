@@ -91,10 +91,10 @@
 台幣報價：663 元
 －
 2. https://jp.mercari.com/item/yyyyy
-日幣金額：¥50000
-台幣報價：12750 元
+日幣金額：¥888 
+台幣報價：252 元 
 －
-台幣總金額：13413 元
+台幣總金額：915 元
     </pre>
 
     <p><strong>📦 注意事項：</strong></p>
@@ -106,19 +106,21 @@
   </div>
 </details>
 
-<h1>メルカリ報價計算器（第一階段報價）</h1>
+<h1 style="font-size: 1.8em;">メルカリ報價計算器<br>（第一階段報價）</h1>
 
   <div class="section">
-    <h2>🔗 報價紀錄（貼上網址 + 商品價格）</h2>
+    <h2>🔗 報價紀錄<br>（貼上網址 + 商品價格）</h2>
     <label for="itemUrl">Mercari 商品網址：</label>
     <input type="text" id="itemUrl" placeholder="https://..." />
-    <label for="itemPrice">商品價格（日圓）：</label>
+    <br><label for="itemPrice">商品價格（日圓）：</label>
     <input type="number" id="itemPrice" placeholder="例如：2500" />
-    <button onclick="addItem()">新增報價紀錄</button>
-    <button onclick="copySummary()" style="margin-left:1em;">複製全部報價文字</button>
+    <div style="text-align:center;">
+<button onclick="addItem()">新增報價紀錄</button>
+<button onclick="copySummary()" style="margin-left:1em;">複製全部報價文字</button>
+</div>
 <p style="color:#a00;font-weight:bold;">請按照日版mercari的商品金額輸入，若填寫錯誤將導致報價錯誤</p>
     <div id="itemTableWrapper">
-      <table border="1" cellpadding="8" id="itemTable">
+      <table border="1" cellpadding="8" id="itemTable" style="font-size: 0.85em;">
         <thead><tr><th>商品網址</th><th>日圓金額</th><th>第一階段金額（台幣）</th><th>操作</th></tr></thead>
         <tbody></tbody>
       </table>
@@ -222,7 +224,7 @@
 
       const tbody = document.querySelector("#itemTable tbody");
       const tr = document.createElement("tr");
-      tr.innerHTML = `<td><a href="${url}" target="_blank">${url}</a></td><td>¥${price}</td><td>${quote} 元</td><td><button onclick="this.parentElement.parentElement.remove(); updateTotal();">刪除</button></td>`;
+      tr.innerHTML = `<td style="max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="${url}" target="_blank">${url}</a></td><td>¥${price}</td><td>${quote} 元</td><td><button onclick="this.parentElement.parentElement.remove(); updateTotal();">刪除</button></td>`;
       tbody.appendChild(tr);
       updateTotal();
 
